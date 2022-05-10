@@ -26,8 +26,12 @@ class _ConnectionCardState extends State<ConnectionCard> {
         .loadConnection(connectionId: connectionUser.id);
     return Column(
       children: [
-        Padding(
+        Container(
           padding: EdgeInsets.all(3.w),
+          decoration: BoxDecoration(
+            color: AppColors.lightElv0,
+            borderRadius: BorderRadius.circular(2.w),
+          ),
           child: Row(
             children: [
               Expanded(

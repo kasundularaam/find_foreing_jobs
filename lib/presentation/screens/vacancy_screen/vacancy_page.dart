@@ -54,100 +54,97 @@ class _VacancyPageState extends State<VacancyPage> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Card(
-                      color: AppColors.lightElv0,
-                      child: Column(
-                        children: [
-                          SizedBox(
-                            height: 2.h,
+                    Column(
+                      children: [
+                        SizedBox(
+                          height: 2.h,
+                        ),
+                        Text(
+                          vacancy.jobTitle,
+                          style: AppTextStyles.h1Primary,
+                        ),
+                        SizedBox(
+                          height: 1.h,
+                        ),
+                        Text(
+                          companyDetails.companyName,
+                          style: AppTextStyles.h3Dark,
+                        ),
+                        SizedBox(
+                          height: 1.h,
+                        ),
+                        Text(
+                          companyDetails.emai,
+                          style: AppTextStyles.p2Dark,
+                        ),
+                        Padding(
+                          padding: EdgeInsets.all(3.w),
+                          child: Column(
+                            children: [
+                              Row(
+                                children: [
+                                  Icon(
+                                    Icons.calendar_month_rounded,
+                                    color: AppColors.primaryColor,
+                                    size: 22.sp,
+                                  ),
+                                  SizedBox(
+                                    width: 5.w,
+                                  ),
+                                  Text(
+                                    "Deadline:",
+                                    style: AppTextStyles.p2Dark,
+                                  ),
+                                  SizedBox(
+                                    width: 5.w,
+                                  ),
+                                  Text(
+                                    vacancy.deadline,
+                                    style: AppTextStyles.p2(Colors.red),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(
+                                height: 1.h,
+                              ),
+                              Row(
+                                children: [
+                                  Icon(
+                                    Icons.people_rounded,
+                                    color: AppColors.primaryColor,
+                                    size: 22.sp,
+                                  ),
+                                  SizedBox(
+                                    width: 5.w,
+                                  ),
+                                  Text(
+                                    "Candidates:",
+                                    style: AppTextStyles.p2Dark,
+                                  ),
+                                  SizedBox(
+                                    width: 5.w,
+                                  ),
+                                  Text(
+                                    vacancy.candidates.length.toString(),
+                                    style: AppTextStyles.p2Primary,
+                                  ),
+                                ],
+                              ),
+                              SizedBox(
+                                height: 1.h,
+                              ),
+                              const Divider(),
+                              SizedBox(
+                                height: 1.h,
+                              ),
+                              Text(
+                                vacancy.jobDescription,
+                                style: AppTextStyles.p2Dark,
+                              ),
+                            ],
                           ),
-                          Text(
-                            vacancy.jobTitle,
-                            style: AppTextStyles.h1Primary,
-                          ),
-                          SizedBox(
-                            height: 1.h,
-                          ),
-                          Text(
-                            companyDetails.companyName,
-                            style: AppTextStyles.h3Dark,
-                          ),
-                          SizedBox(
-                            height: 1.h,
-                          ),
-                          Text(
-                            companyDetails.emai,
-                            style: AppTextStyles.p2Dark,
-                          ),
-                          Padding(
-                            padding: EdgeInsets.all(3.w),
-                            child: Column(
-                              children: [
-                                Row(
-                                  children: [
-                                    Icon(
-                                      Icons.calendar_month_rounded,
-                                      color: AppColors.primaryColor,
-                                      size: 22.sp,
-                                    ),
-                                    SizedBox(
-                                      width: 5.w,
-                                    ),
-                                    Text(
-                                      "Deadline:",
-                                      style: AppTextStyles.p2Dark,
-                                    ),
-                                    SizedBox(
-                                      width: 5.w,
-                                    ),
-                                    Text(
-                                      vacancy.deadline,
-                                      style: AppTextStyles.p2(Colors.red),
-                                    ),
-                                  ],
-                                ),
-                                SizedBox(
-                                  height: 1.h,
-                                ),
-                                Row(
-                                  children: [
-                                    Icon(
-                                      Icons.people_rounded,
-                                      color: AppColors.primaryColor,
-                                      size: 22.sp,
-                                    ),
-                                    SizedBox(
-                                      width: 5.w,
-                                    ),
-                                    Text(
-                                      "Candidates:",
-                                      style: AppTextStyles.p2Dark,
-                                    ),
-                                    SizedBox(
-                                      width: 5.w,
-                                    ),
-                                    Text(
-                                      vacancy.candidates.length.toString(),
-                                      style: AppTextStyles.p2Primary,
-                                    ),
-                                  ],
-                                ),
-                                SizedBox(
-                                  height: 1.h,
-                                ),
-                                const Divider(),
-                                SizedBox(
-                                  height: 1.h,
-                                ),
-                                Text(
-                                  vacancy.jobDescription,
-                                  style: AppTextStyles.p2Dark,
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                     BlocProvider(
                       create: (context) => ApplyJobCubit(),
